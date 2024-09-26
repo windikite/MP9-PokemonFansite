@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <title>Online Pokedex</title>
+</head>
+<body class="bg-secondary">
+    <main class="bg-light mx-auto rounded p-5" style="max-width: 85%;min-height:800px;">
+        <div class="d-none" id="detailsContainer" class="mx-auto rounded">
+             <h1 class="text-center" id="pokeName">test</h1>
+             <div class="col text-dark">
+                  <div class="row d-flex justify-content-around text-center mb-3">
+                       <img class="col bg-dark-subtle rounded ms-3 me-3" src="" id="mainSprite" style="max-width:300px">
+                       </img>
+                  </div>
+                  <div class="row d-flex mb-2">
+                       <div class="col-sm gx-0 gy-0 bg-dark-subtle rounded ms-1 me-1 mb-3">
+                            <p class="row bg-dark-subtle rounded ms-auto me-auto mb-0 justify-content-center">Dex #</p>
+                            <p class="row bg-dark rounded ms-auto me-auto text-light mb-0 justify-content-center" id="pokeNumber"></p>
+                       </div>
+                       <div class="col-sm gx-0 gy-0 bg-dark-subtle rounded ms-1 me-1 mb-3">
+                            <p class="row bg-dark-subtle rounded ms-auto me-auto mb-0 justify-content-center">Type</p>
+                            <p class="row bg-dark rounded ms-auto me-auto text-light mb-0 justify-content-center" id="pokeType"></p>
+                       </div>
+                       <div class="col-sm gx-0 gy-0 bg-dark-subtle rounded ms-1 me-1 mb-3">
+                            <p class="row bg-dark-subtle rounded ms-auto me-auto mb-0 justify-content-center">Height</p>
+                            <p class="row bg-dark rounded ms-auto me-auto text-light mb-0 justify-content-center" id="pokeHW"></p>
+                       </div>
+                  </div>
+   
+                  <div class="row d-flex mb-2 justify-content-around text-center">
+                       <div class="col-sm mb-3">
+                         <table class="bg-dark mt-3 px-3 rounded text-light" id="pokeStats" style="width:100%;">
+                              <tr>
+                                   <th>
+                                        Stat
+                                   </th>
+                                   <th>
+                                        Total
+                                   </th>
+                              </tr>
+                         </table>
+                    </div>
+                    <div class="col-sm mb-3">
+                         <table class="bg-dark mt-3 rounded text-light" id="pokeAbilities" style="width:100%;">
+                              <tr>
+                                   <th>
+                                        Abilities
+                                   </th>
+                              </tr>
+                         </table>
+                         <table class="bg-dark mt-3 rounded text-light" id="pokeHiddenAbilities" style="width:100%;">
+                              <tr>
+                                   <th>
+                                        Hidden Abilities
+                                   </th>
+                              </tr>
+                         </table>
+                    </div>
+                  </div>
+   
+                  <div class="row d-flex justify-content-around text-center">
+                       <div class="col mb-3">
+                            <h2 class="text-center mb-1">Level up</h2>
+                            <table class="bg-dark mt-3 px-3 rounded text-light" id="levelUpMoves" style="width:100%;">
+                                 <tr>
+                                      <th>
+                                           Lvl
+                                      </th>
+                                      <th>
+                                           Move
+                                      </th>
+                                 </tr>
+                            </table>
+                       </div>
+                       <div class="col mb-3">
+                            <h2 class="text-center mb-1">Learned TMs</h2>
+                            <table class="bg-dark mt-3 rounded text-light" id="tmMoves" style="width:100%;">
+                                 <tr>
+                                      <th>
+                                           Move
+                                      </th>
+                                 </tr>
+                            </table>
+                       </div>
+                  </div>
+             </div>
+        </div>
+   </main>
+</body>
+<footer>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/components/componentImporter.js"></script>
+    <script src="/pokeDetails.js"></script>
+</footer>
+</html>
