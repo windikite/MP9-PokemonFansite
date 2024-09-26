@@ -23,6 +23,7 @@ function createRow(...content) {
     return new_row;
 }
 
+// neat function to replace the standard dashes with spaces and capitalize the first letter of the string 
 function cleanText(text){
     let noDashes = text.replace("-", " ")
     let caps = noDashes[0].toUpperCase() + noDashes.slice(1,)
@@ -32,8 +33,8 @@ function cleanText(text){
 // document element hooks
 const moveTable = document.getElementById("moveTable");
 
+// call the api, iterate over and fetch each entry's url, then create a row and append to table
 const moveList = getPokeData("https://pokeapi.co/api/v2/move/?limit=50").then(response => {
-    moveTable.classList.remove("d-none");
     response.results.map(x => getPokeData(x.url).then(response => {
         // console.log(response)
         moveTable.appendChild(createRow(cleanText(response.type.name), cleanText(response.name), response.power, response.accuracy, response.pp, response.effect_entries[0].short_effect))
@@ -41,5 +42,5 @@ const moveList = getPokeData("https://pokeapi.co/api/v2/move/?limit=50").then(re
     }))
     moveTable.classList.add("bg-dark");
     moveTable.classList.add("table-dark");
-    moveTable.classList.add("table-striped");
+    moveTable.classList.remove("d-none");
 })

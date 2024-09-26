@@ -36,6 +36,7 @@ function createRow(...content) {
     return new_row;
 }
 
+// neat function to replace the standard dashes with spaces and capitalize the first letter of the string 
 function cleanText(text){
      let noDashes = text.replace("-", " ")
      let caps = noDashes[0].toUpperCase() + noDashes.slice(1,)
@@ -44,8 +45,6 @@ function cleanText(text){
 
 // initialize fetch and use of data
 getPokeData(localStorage.getItem("fetchUrl")).then((result) => {
-    //      when the data is successfully fetched, allow the page content to be displayed
-    detailsContainer.classList.remove("d-none");
     //      capitalize the name and add it to page
     pokeName.innerHTML = `${result.name[0].toUpperCase()}${result.name.slice(
          1
@@ -69,7 +68,6 @@ getPokeData(localStorage.getItem("fetchUrl")).then((result) => {
               name: cleanText(x.stat.name),
               amount: x.base_stat
          };
-         // console.log(new_stat)
          return new_stat;
     });
     stats.forEach((x) => {
@@ -118,4 +116,6 @@ getPokeData(localStorage.getItem("fetchUrl")).then((result) => {
     machineMoves.forEach((x) => {
          tmMoves.appendChild(createRow(x.name));
     });
+    //when the data is successfully fetched and added, allow the page content to be displayed
+    detailsContainer.classList.remove("d-none");
 });
